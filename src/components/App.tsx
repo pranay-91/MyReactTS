@@ -15,10 +15,8 @@ const mapStateToProps = (state) => ({ users: state.users});
 const mapDispatchToProps = (dispatch: any) => bindActionCreators(ActionCreators, dispatch);
 
 function App(props: IAppProps) {
-  // tslint:disable-next-line:no-console
   console.log(props.users);
   return (
-      // tslint:disable-next-line:jsx-no-multiline-js
     <div>{props.users.users.map((user, i) => (
         <div key={i}>
             <h1>{user.id}</h1>
