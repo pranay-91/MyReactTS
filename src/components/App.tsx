@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {ActionCreators} from "../actions";
 
+import "../styles/app.scss";
+
 interface IAppProps {
   users: any;
   changeUser: any;
