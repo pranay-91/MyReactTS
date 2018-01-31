@@ -1,16 +1,17 @@
 {
-    "compilerOptions": {
-      "module": "es6",
-      "target": "es6",
-      "moduleResolution": "node",
-      "baseUrl": "src",
-      "allowSyntheticDefaultImports": true,
-      "noImplicitAny": false,
-      "sourceMap": true,
-      "outDir": "ts-build",
-      "jsx": "preserve"
-    },
-    "exclude": [
-      "node_modules"
-    ]
-  }
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "outDir": "ts-build",
+    "jsx": "preserve",
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "exclude": ["node_modules"]
+}

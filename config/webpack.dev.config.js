@@ -33,6 +33,17 @@ module.exports = {
   },
   module: {
     rules: [
+      // enfor tslint
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        enforce: "pre",
+        loader: "tslint-loader",
+        options: {
+          configFile: "tslint.json",
+          tsConfigFile: "tsconfig.json"
+        }
+      },
       // .ts(x) files should first pass through the Typescript loader, and then through babel loader
       {
         test: /\.tsx?$/,

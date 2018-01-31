@@ -7,12 +7,12 @@ const appdiv = document.createElement("div");
 appdiv.id = "app";
 document.body.appendChild(appdiv);
 
-const render = Component => {
+const render = (Component) => {
   ReactDom.render(
     <AppContainer>
       <Component />
     </AppContainer>,
-    appdiv
+    appdiv,
   );
 };
 
