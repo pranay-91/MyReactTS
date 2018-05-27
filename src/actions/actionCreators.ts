@@ -1,21 +1,8 @@
 import ActionTypes from "./actionTypes";
 
-export interface IUserAction {
+export interface IAction {
   type: string;
-  payload?: object | string | number;
-  user?: object;
+  payload?: any;
 }
 
-export function changeUser(user: object): IUserAction {
-  return  {
-    type: ActionTypes.CHANGE_USER,
-    user,
-  };
-}
-
-export function fetchUser(): IUserAction {
-  return {
-    payload: 1,
-    type: ActionTypes.FETCH_USERS,
-  };
-}
+export const fetchData = () => ({ type: ActionTypes.FETCH_DATA});

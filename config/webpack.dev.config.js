@@ -17,12 +17,15 @@ module.exports = {
     "react-hot-loader/patch",
     "webpack-dev-server/client?http://localhost:8080",
     "webpack/hot/only-dev-server",
-    "index.tsx"
+    "index.tsx",
+    "babel-polyfill"
   ],
   // Output the bundled JS to dist/app.js
 
   output: {
-    path: path.resolve("dist")
+    path: path.resolve("dist"),
+    filename: "bundle.js",
+    publicPath: '/'
   },
 
   resolve: {
@@ -104,7 +107,8 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    inline: true
+    inline: true,
+    historyApiFallback: true,
   },
 
   plugins: [
