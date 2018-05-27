@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect, Dispatch } from "react-redux";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { ActionCreators } from "../actions";
 
 interface IStateProps {
@@ -10,7 +11,7 @@ interface IStateProps {
 interface IDispatchProps {
   fetchData: () => ActionCreators.IAction;
 }
-interface IDashboardProps extends IStateProps, IDispatchProps {}
+interface IDashboardProps extends IStateProps, IDispatchProps, RouteComponentProps<{}> {}
 
 const mapStateToProps = (state: any): IStateProps =>
 ({data: state.client.data, error: state.client.error, fetching: state.client.fetching});
@@ -51,4 +52,5 @@ class Dashboard extends Component<IDashboardProps, {}> {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default withRouter<IDashboardProps>(
+  connect<IStateProps, IDispatchProps, IDashboardProps>(mapStateToProps, mapDispatchToProps)(Dashboard));
